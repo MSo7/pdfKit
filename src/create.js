@@ -56,8 +56,7 @@ for(let i=0;i<pdfData.length;i++){
   return await Promise.all(optionPromise);
 }
 
-
-
+}
 
 module.exports.generatePdf = generatePdf;
 module.exports.generateMultiplePdf = generateMultiplePdf;
