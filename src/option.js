@@ -4,14 +4,14 @@ const fs=require("fs");
 async function options(pdf,{watermark,indexing}) {
     const pdfDoc=await PDFDocument.load(pdf);
     let watermarkImage
-    if(watermark.src||watermark.imageBuffer){
-      if(watermark.src)watermark.imageBuffer=fs.readFileSync(watermark.src);
+    if(watermark?.src||watermark?.imageBuffer){
+      if(watermark?.src)watermark.imageBuffer=fs.readFileSync(watermark.src);
         watermarkImage=await pdfDoc.embedPng(watermark.imageBuffer);
     }
    for(let i=0;i<pdfDoc.getPageCount();i++){
     const pageCount=i+1;
     const page=pdfDoc.getPage(i);
-    if(watermark){
+    if(watermark?.imageBuffer||watermark?.text){
     if(watermarkImage){
       page.drawImage(watermarkImage, {x:watermark.xAxis||50, y:watermark.yAxis||200, width:watermark.width||200, height:watermark.height||100,opacity:watermark.opacity||0.5});
     }

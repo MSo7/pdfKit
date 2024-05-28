@@ -1,6 +1,6 @@
 {
-  "name": "html-pdfkit",
-  "version": "1.0.0",
+  "name": "html-pdf-kit",
+  "version": "1.0.1",
   "description": "To genarate pdf single or multiple or merge with making ",
   "main": "index.js",
   "scripts": {
